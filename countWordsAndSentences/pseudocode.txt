@@ -1,0 +1,51 @@
+# Initialize functions to count words, sentences, characters, and paragraphs
+
+# Function to count words
+Define count_words(text):
+    Initialize word_count to 0
+    Split text into words using whitespace as a delimiter
+    For each word in the split text:
+        Increment word_count
+    Return word_count
+
+# Function to count sentences
+Define count_sentences(text):
+    Initialize sentence_count to 0
+    For each character in text:
+        If character is a period (.), exclamation mark (!), or question mark (?):
+            Increment sentence_count
+    Return sentence_count
+
+# Function to count characters excluding spaces
+Define count_characters(text):
+    Initialize char_count to 0
+    For each character in text:
+        If character is not a whitespace:
+            Increment char_count
+    Return char_count
+
+# Function to count paragraphs
+Define count_paragraphs(text):
+    Initialize paragraph_count to 0
+    Split text into lines
+    For each line in the split text:
+        If line has non-whitespace characters:
+            Increment paragraph_count
+    Return paragraph_count
+
+# Main program to get user input and display results
+Define main():
+    Display "Enter a paragraph: "
+    Get input from user into a variable 'paragraph'
+
+    # Get the counts from respective functions
+    word_count = count_words(paragraph)
+    sentence_count = count_sentences(paragraph)
+    char_count = count_characters(paragraph)
+    paragraph_count = count_paragraphs(paragraph)
+
+    # Display the results
+    Display "Word count: ", word_count
+    Display "Sentence count: ", sentence_count
+    Display "Character count (excluding spaces): ", char_count
+    Display "Paragraph count: ", paragraph_count

@@ -1,0 +1,71 @@
+
+Define FILE_PATH = "/contact.txt"  # Path to the contacts file in AddressBook
+
+# Define a structure for contact information
+Define struct Contact:
+    name   # Contact's name
+    phone  # Contact's phone number
+    email  # Contact's email address
+
+# Function to add a new contact and save it to the file
+Define function add_contact(contacts, name, phone, email):
+    Append {name, phone, email} to contacts  # Add the contact to the list
+    Open FILE_PATH in append mode
+    If the file is open:
+        Write name, phone, email to the file
+    Else:
+        Display an error message
+
+# Function to remove a contact and update the file
+Define function remove_contact(contacts, name):
+    Remove all contacts where the name matches from contacts
+    Open FILE_PATH to rewrite with updated contacts
+    If the file is open:
+        For each contact in contacts:
+            Write name, phone, email to the file
+    Else:
+        Display an error message
+
+# Function to display all contacts
+Define function display_contacts(contacts):
+    For each contact in contacts:
+        Display contact's name, phone, email
+
+# Function to load existing contacts from the file
+Define function load_contacts(contacts):
+    Open FILE_PATH to read
+    If the file is open:
+        While there are lines in the file:
+            Read line
+            Split line by commas into name, phone, email
+            Append {name, phone, email} to contacts
+    Else:
+        Display an error message
+
+# Main program logic
+Define function main():
+    Initialize an empty list 'contacts'
+    Call load_contacts(contacts)  # Load existing contacts from the file
+    Initialize a boolean 'running' as true
+
+    While running:
+        Display menu options:
+            1. Add contact
+            2. Remove contact
+            3. Display contacts
+            4. Quit
+
+        Get user's choice
+        Switch on 'choice':
+            Case 1:
+                Get name, phone, and email from user
+                Call add_contact(contacts, name, phone, email)
+            Case 2:
+                Get name from user
+                Call remove_contact(contacts, name)
+            Case 3:
+                Call display_contacts(contacts)
+            Case 4:
+                Set 'running' to false  # Exit the loop
+            Default:
+                Display "Invalid choice. Try again."

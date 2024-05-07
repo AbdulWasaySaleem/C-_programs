@@ -1,0 +1,6 @@
+TEmperature convertor
+
+Define functions to convert between Celsius, Fahrenheit, and Kelvin
+Display options for conversion directions
+Get user input for the temperature and the desired conversion
+Perform the conversion and display the result

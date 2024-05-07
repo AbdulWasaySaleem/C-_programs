@@ -1,0 +1,11 @@
+Guess the word
+
+Define an array with several words to guess
+Initialize a random seed for random operations
+Select a random word from the array
+Set up a game loop:
+    Display the word with guessed letters and placeholders for unguessed letters
+    Ask the user to guess a letter or the entire word
+    If the user guesses a letter correctly, reveal it in the word
+    If the user guesses the entire word correctly, congratulate them
+    If the user runs out of attempts or guesses incorrectly, end the game

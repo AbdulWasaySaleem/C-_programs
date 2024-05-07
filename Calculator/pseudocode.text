@@ -1,0 +1,5 @@
+Display available operations: +, -, *, /
+Get user input for the operation
+Get user input for two numbers
+Perform the operation based on the user input
+Display the result

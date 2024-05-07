@@ -1,0 +1,62 @@
+# Define the Hangman ASCII art for each stage of the game
+Define hangman_art[7] with ASCII art representations for each stage
+
+# Define a list of words to choose from
+Define words = ["programming", "hangman", "games"]
+
+# Function to get a random word from a list of words
+Define function get_random_word(words):
+    Return a random word from 'words'
+
+# Function to play the Hangman game
+Define function play():
+    # Get a random word
+    secret_word = get_random_word(words)
+    guess_word = '_' * length(secret_word)  # Create a word with underscores for unguessed letters
+    try_no = 0  # Number of incorrect guesses
+    guess = ''  # Variable to hold the player's guess
+
+    # Main game loop
+    While true:
+        # Display the current state of the hangman and the guess word
+        Print hangman_art[try_no]
+        Print guess_word
+        Print "Enter your guess:"
+
+        # Get the player's guess
+        Get input into 'guess'
+
+        # Check if the guess is in the secret word
+        If 'guess' is in 'secret_word':
+            # Update the guess word to reveal correct letters
+            For i from 0 to length(secret_word) - 1:
+                If secret_word[i] == guess:
+                    guess_word[i] = guess
+            
+            # Check if the whole word has been guessed
+            If guess_word == secret_word:
+                Print hangman_art[try_no]
+                Print guess_word
+                Print "You win! The word was", secret_word
+                Break from loop
+        Else:
+            # Increment the number of incorrect guesses
+            try_no = try_no + 1
+        
+        # If all attempts are used, end the game
+        If try_no >= 6:
+            Print hangman_art[try_no]
+            Print guess_word
+            Print "You lost! The word was", secret_word
+            Break from loop
+
+# Main function to start the game
+Define function main():
+    # Initialize random seed
+    Seed random number generator with current time
+    
+    # Welcome message
+    Print "Welcome to Hangman!"
+    
+    # Start the game
+    Call play()

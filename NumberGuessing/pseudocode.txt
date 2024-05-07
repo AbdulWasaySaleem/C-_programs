@@ -1,0 +1,10 @@
+GUESS THE NUMBER
+
+Generate a random number between 1 and 100
+Initialize the number of attempts
+Loop until the correct number is guessed:
+    Get a guess from the user
+    If the guess is too high, inform the user
+    If the guess is too low, inform the user
+    If the guess is correct, break the loop
+Display the number of attempts and congratulate the user

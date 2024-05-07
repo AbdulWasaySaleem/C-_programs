@@ -1,0 +1,8 @@
+PASSWORD GENERATOR
+
+Define character sets for lowercase, uppercase, numbers, and special characters
+Initialize the desired password length
+Loop through the desired length:
+    Randomly select a character from the combined character set
+    Add the character to the password
+Return the generated password
